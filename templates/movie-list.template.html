@@ -1,0 +1,26 @@
+<form class="navbar-form navbar-center" role="search">
+    <div class="form-group">
+        <input type="input" class="form-control" placeholder="Search" ng-model="$ctrl.query">
+    </div>
+    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+</form>
+
+
+<div class="row">
+    <div ng-repeat="movie in movies | filter: $ctrl.query" class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+        <ul>
+            <li>
+            {{movie.title}}
+            </li>
+                <a href="#specs"><img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" ></a>
+
+
+            <ul>
+    </div>
+</div>
+
+
+
+
+
+<!-- encontrar propiedades de peliculas: https://image.tmdb.org/t/p/w500 -->

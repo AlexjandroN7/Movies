@@ -1,0 +1,26 @@
+.poster {
+	width: 90%
+}
+.moviePoster {
+	width: 20%;
+}
+
+.movie-container {
+	padding: 20px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#main-container {
+	text-align: center;
+}
+
+#main-container form{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+img {
+	height:250px;
+	width:150px;
+
+}
