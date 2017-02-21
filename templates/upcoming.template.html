@@ -1,0 +1,19 @@
+<h1>Upcoming Movies</h1>
+<form  class="form-inline" role="form">
+
+	<div class="form-group">
+		<label class="sr-only" for="">label</label>
+		<input ng-model="moviesQuery" type="text" class="form-control" id="" placeholder="Input movie name...">
+	</div>
+
+
+</form>
+
+<div class="movie-container">
+
+	<div ng-repeat="movie in movies | filter: { title : moviesQuery } " class="moviePoster">
+		<img class="poster" src="{{urlImg + movie.poster_path}}"></img>
+		<p>{{ movie.title }}</p>
+
+	</div>
+</div>

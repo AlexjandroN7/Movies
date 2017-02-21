@@ -15,13 +15,70 @@
                   .then( shortenResults )
       }
 
-   
+
 
       return {
         getPopular: getPopular,
-       
+
       }
 
+
+    })
+    .factory("topRatedFactory", function($http) {
+
+
+        var apiKey = '93c5311362abee15fcceeeafefac9991'
+      /*/getTopRated */
+
+      function getTopRated(){
+        var url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=<%KEY%>'
+        url = url.replace('<%KEY%>', apiKey)
+
+        return $http.get(url)
+                    .then(getResults)
+                    .then(shortenResults)
+      }
+      return {
+        getTopRated: getTopRated,
+      }
+    })
+    .factory("upcomingFactory", function($http){
+
+    var apiKey = '93c5311362abee15fcceeeafefac9991'
+
+      /* getUpcoming */
+
+      function getUpcoming(){
+        var url = 'https://api.themoviedb.org/3/movie/upcoming?api_key=<%KEY%>'
+        url = url.replace('<%KEY%>', apiKey)
+
+        return $http.get(url)
+                    .then(getResults)
+                    .then(shortenResults)
+
+      }
+      return {
+        getUpcoming: getUpcoming,
+      }
+    })
+    .factory("nowPlayingFactory", function($http) {
+
+    var apiKey = '93c5311362abee15fcceeeafefac9991'
+
+      /* getnowPlaying */
+
+      function getNowPlaying(){
+        var url = 'https://api.themoviedb.org/3/movie/now_playing?api_key=<%KEY%>'
+        url = url.replace('<%KEY%>', apiKey)
+
+        return $http.get(url)
+                    .then(getResults)
+                    .then(shortenResults)
+      }
+
+      return {
+        getNowPlaying: getNowPlaying,
+      }
     })
 
   function getResults(response) {
@@ -29,7 +86,6 @@
   }
 
   function shortenResults(movies) {
-    console.log(movies);
     return movies.map(function(movie) {
       var currentMovieShortened = {
         title: movie.title,
