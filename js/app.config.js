@@ -5,12 +5,12 @@ angular.
   config(function($routeProvider) {
         $routeProvider.
            when('/', {
-             templateUrl: 'templates/movie-list.template.html',
-             controller: 'movieListController'
+             template: '<popular-component></popular-component>'
+
            }).
            when('/upcoming', {
-             templateUrl: 'templates/upcoming.template.html',
-             controller: 'upcomingController'
+             template: '<upcoming-component></upcoming-component>'
+
            }).
            when('/topRated', {
              templateUrl: 'templates/top-rated.template.html',
